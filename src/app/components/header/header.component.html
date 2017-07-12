@@ -1,4 +1,43 @@
-<app-menu></app-menu>
-<app-logo></app-logo>
-<app-searchbar></app-searchbar>
-<app-cartbar></app-cartbar>
+<nav class="navbar animated fadeIn">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="http://bulma.io">
+            <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+        </a>
+        <div class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a routerLink="/" class="navbar-item">
+                <span class="icon">
+                   <i class="fa fa-home"></i>
+                </span> 
+                Home
+            </a>
+            <a routerLink="/products" class="navbar-item">
+                <span class="icon">
+                    <i class="fa fa-shopping-bag"></i>
+                </span> 
+                Products
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <app-searchbar></app-searchbar>                
+            </div>
+            <a class="navbar-item" (click)="clear()">
+                <span class="icon">
+                    <i class="fa fa-shopping-cart"></i>
+                </span>
+                <div class="badge">
+                    <div class="count">
+                        {{count}}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</nav>
