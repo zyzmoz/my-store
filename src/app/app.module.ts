@@ -16,6 +16,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { Error404PageComponent } from './pages/error-404-page/error-404-page.component';
 import { CartbarComponent } from './components/cartbar/cartbar.component';
 
+import { MenuService } from './providers/menu.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,7 @@ import { CartbarComponent } from './components/cartbar/cartbar.component';
     BrowserModule,
     routing
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

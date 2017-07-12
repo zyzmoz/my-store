@@ -20,7 +20,17 @@ export class MenuService {
 
   constructor() { }
 
-  open
+  open() {
+    this.opened = true;
+    console.log('open');
+    
+  }
+
+  close() {
+    this.opened = false;
+    console.log('close');
+    
+  }
 
 
 }

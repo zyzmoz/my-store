@@ -1,20 +1,18 @@
-<div class="hero outer is-fullheight animated slideInLeft">
-  <div class="hero-body outer">
-    <div class="container">
-      <section class="hero inner is-danger is-bold animated fadeIn">
-        <div class="hero-body inner">
-          <div class="container">
-            oi
-            <!-- <img src="assets/avatar.png" /> -->
-          </div>
-        </div>
-      </section>
-
-      <br />
-<!-- 
-      <ul>
+<div class="menu is-fullheight animated slideInRight" [ngClass]="{'is-hidden': !menu.opened}">
+  <div class="menu-header">
+    <a class="button is-white" (click)="menu.close()">
+      <span class="icon">
+        <i class="fa fa-close"></i>
+      </span>
+    </a>
+    <div class="avatar">
+      <img src="https://s-media-cache-ak0.pinimg.com/736x/b4/77/db/b477dbdb885d220c5c854792c7301bd4--silhouette-images-silhouette-files.jpg" class="avatar-img">   
+    </div>
+  </div>
+  <div class="menu-body">
+     <ul>
         <li *ngFor="let option of menu.options">
-          <a class="columns is-mobile" [routerLink]="option.route">
+          <a class="columns is-mobile" [routerLink]="option.router" (click)="menu.close()">
             <div class="column has-text-right is-one-quarter">
               <i class="{{ option.icon }}"></i>
             </div>
@@ -25,9 +23,7 @@
             </div>
           </a>
         </li>
-      </ul>       -->
-    </div>
-    
+      </ul> 
   </div>
   
 </div>
