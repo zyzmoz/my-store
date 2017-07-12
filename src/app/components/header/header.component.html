@@ -22,15 +22,8 @@
             <div class="navbar-item">
                 <app-searchbar></app-searchbar>                
             </div>
-            <a class="navbar-item" (click)="clear()">
-                <span class="icon">
-                    <i class="fa fa-shopping-cart"></i>
-                </span>
-                <div class="badge">
-                    <div class="count">
-                        {{count}}
-                    </div>
-                </div>
+            <a class="navbar-item" (click)="clear()">                
+                <app-cartbar></app-cartbar>
             </a>
         </div>
     </div>

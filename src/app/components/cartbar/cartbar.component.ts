@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cartbar.component.sass']
 })
 export class CartbarComponent implements OnInit {
-
+  
+  count: number = 99;
   constructor() { }
 
   ngOnInit() {
