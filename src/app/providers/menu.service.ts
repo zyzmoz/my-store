@@ -23,8 +23,7 @@ export class MenuService {
   open() {
     $(".menu").removeClass('is-hidden slideOutRight');
     $(".menu").addClass('slideInRight');
-    this.opened = true;
-    console.log('open');
+    this.opened = true;    
     
   }
 
@@ -35,8 +34,7 @@ export class MenuService {
       $(".menu").addClass('is-hidden');  
     },1000);
     
-    this.opened = false;
-    console.log('close');
+    this.opened = false;    
     
   }
 
