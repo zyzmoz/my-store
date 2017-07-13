@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewContainerRef } from '@angular/core';
+import { ProductService } from '../../providers/product.service';
+import { CartService } from '../../providers/cart.service';
+
+import { CartItem } from '../../models/cart-item';
+
+
 
 @Component({
   selector: 'app-product-card',
@@ -7,9 +13,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
 
-  constructor() { }
+  
+
+  constructor(public product: ProductService, private cart: CartService) { 
+    
+  }
 
   ngOnInit() {
+  }
+
+  buyItem(obj){
+    let item: CartItem = {
+      id: obj.id,
+      item: this.cart.cartList.length + 1,
+      description: obj.description,
+      url: obj.url,
+      price: obj.price,
+      quantity: 1,       
+      picture: obj.picture
+    };
+
+    this.cart.addItem(item);
+    
+
   }
 
 }

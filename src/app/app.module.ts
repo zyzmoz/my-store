@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { routing } from './app.router';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -18,7 +20,11 @@ import { CartbarComponent } from './components/cartbar/cartbar.component';
 
 import { MenuService } from './providers/menu.service';
 import { CartService } from './providers/cart.service';
+import { ProductService } from './providers/product.service';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,9 +46,12 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    
     routing
   ],
-  providers: [MenuService, CartService],
+  providers: [MenuService, CartService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
