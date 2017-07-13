@@ -1,10 +1,11 @@
-<a class="navbar-item">
+<a routerLink="/cart" class="navbar-item">
     <span class="icon">
         <i class="fa fa-shopping-cart"></i>
     </span>
-    <div class="badge" *ngIf="count > 0">
-        <div class="count">
-            {{count}}
-        </div>
+    <div class="badge" *ngIf="cart.cartList.length > 0">
+        <span class="tag is-danger">
+            {{cart.cartList.length}}
+        </span>
+        
     </div>
 </a>

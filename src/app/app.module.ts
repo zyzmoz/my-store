@@ -17,6 +17,8 @@ import { Error404PageComponent } from './pages/error-404-page/error-404-page.com
 import { CartbarComponent } from './components/cartbar/cartbar.component';
 
 import { MenuService } from './providers/menu.service';
+import { CartService } from './providers/cart.service';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +35,14 @@ import { MenuService } from './providers/menu.service';
     ProductsPageComponent,
     ProductPageComponent,
     Error404PageComponent,
-    CartbarComponent
+    CartbarComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
     routing
   ],
-  providers: [MenuService],
+  providers: [MenuService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

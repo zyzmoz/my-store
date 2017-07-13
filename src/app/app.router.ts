@@ -1,5 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes , RouterModule } from '@angular/router';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
@@ -17,6 +18,10 @@ const routes : Routes = [
     {
         path: 'products',
         component: ProductsPageComponent
+    },
+    {
+        path: 'cart',
+        component: CartPageComponent
     },
     {
         path: '**',

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../providers/cart.service';
 
 @Component({
   selector: 'app-cartbar',
   templateUrl: './cartbar.component.html',
   styleUrls: ['./cartbar.component.sass']
 })
-export class CartbarComponent implements OnInit {
+export class CartbarComponent implements OnInit { 
   
-  count: number = 99;
-  constructor() { }
+  constructor(public cart: CartService) { }
 
   ngOnInit() {
   }

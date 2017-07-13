@@ -21,12 +21,20 @@ export class MenuService {
   constructor() { }
 
   open() {
+    $(".menu").removeClass('is-hidden slideOutRight');
+    $(".menu").addClass('slideInRight');
     this.opened = true;
     console.log('open');
     
   }
 
   close() {
+    $(".menu").removeClass('slideInRight');
+    $(".menu").addClass('slideOutRight');  
+    setTimeout(function (){
+      $(".menu").addClass('is-hidden');  
+    },1000);
+    
     this.opened = false;
     console.log('close');
     

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../../providers/menu.service';
+import { CartService } from '../../providers/cart.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +9,7 @@ import { MenuService } from '../../providers/menu.service';
 })
 export class MenuComponent implements OnInit {  
 
-  constructor(public menu: MenuService) { 
+  constructor(public menu: MenuService, public cart: CartService) { 
     
   }
 

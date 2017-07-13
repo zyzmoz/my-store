@@ -1,4 +1,4 @@
-<div class="menu is-fullheight animated slideInRight" [ngClass]="{'is-hidden': !menu.opened}">
+<div class="menu is-fullheight is-hidden is-hidden-desktop animated">
   <div class="menu-header">
     <a class="button is-white" (click)="menu.close()">
       <span class="icon">
@@ -21,6 +21,24 @@
                 {{ option.text }}
               </strong>
             </div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/cart" class="columns is-mobile" (click)="menu.close()">
+            <div class="column has-text-right is-one-quarter">
+              <i class="fa fa-shopping-cart"></i>
+            </div>  
+            <div class="column">
+              <strong>
+                Cart
+              </strong>              
+            </div>          
+            <div class="column">
+              <span class="tag is-danger" *ngIf="cart.cartList.length > 0">
+                {{cart.cartList.length}}
+              </span>              
+            </div>
+            
           </a>
         </li>
       </ul> 
