@@ -8,4 +8,12 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then(() => {
+    //Register Service worker
+    if ('serviceWorker' in navigator){
+      navigator.serviceWorker.register('/sw.js');
+    }
+
+  });
