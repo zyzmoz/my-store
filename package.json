@@ -9,7 +9,8 @@
     "build:prod": "ng build --prod --aot && node workbox-build.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "cd dist/ && git init && git add . && git commit -m 'Deploy' && git remote add origin https://github.com/zyzmoz/zyzmoz.github.io && git push origin master --force"
   },
   "private": true,
   "dependencies": {

@@ -12,6 +12,7 @@ import { CartItem } from '../../models/cart-item';
   styleUrls: ['./product-card.component.sass']
 })
 export class ProductCardComponent implements OnInit {
+  msg : boolean = false;
 
   
 
@@ -32,8 +33,11 @@ export class ProductCardComponent implements OnInit {
       quantity: 1,       
       picture: obj.picture
     };
-
+    this.msg = true;
     this.cart.addItem(item);
+    setTimeout(() =>{
+      this.msg = false;
+    },3000);
     
 
   }

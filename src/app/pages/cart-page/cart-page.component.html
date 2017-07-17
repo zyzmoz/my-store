@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of cart.cartList; let i = $index">
+          <tr *ngFor="let item of cart.cartList; let i = index">
             <th colspan="1" style="width:2%" class="is-hidden-desktop">              
               <a (click)="cart.deleteItem(i)" class="red">
                 <span class="icon is-small">

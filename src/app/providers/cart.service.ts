@@ -14,7 +14,7 @@ export class CartService {
   }];
   constructor() { }
 
-  deleteItem(index){
+  deleteItem(index){      
     this.cartList.splice(index,1);
   }
 
