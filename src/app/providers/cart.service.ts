@@ -19,7 +19,16 @@ export class CartService {
   }
 
   addItem(obj){
-    this.cartList.push(obj);
+    var exists = false;
+    for(var i = 0; i < this.cartList.length; i++){
+      if (this.cartList[i].id == obj.id){
+        this.cartList[i].quantity += 1;
+        exists = true;
+        break;
+      }
+    }
+    if (!exists)
+      this.cartList.push(obj);
   }
   
   totalize(){
