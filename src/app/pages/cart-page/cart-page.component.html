@@ -1,3 +1,6 @@
+<div class="notification is-success msg animated fadeIn" [ngClass]="{'fadeOut is-hidden': !cart.paymentDone}">
+  Payment was completed successfully!
+</div>
 <div class="animated fadeIn">
   <div class="column">
     <div class="column">
@@ -47,8 +50,8 @@
         
       </table>
       <div >
-        <button [disabled]="cart.cartList.length == 0" class="button is-success is-fullwidth is-hidden-desktop">Checkout</button>
-        <button [disabled]="cart.cartList.length == 0" class="button is-success is-hidden-mobile">Checkout</button>
+        <button [disabled]="cart.cartList.length == 0" (click)="cart.checkout()" class="button is-success is-fullwidth is-hidden-desktop" [ngClass]="{'is-loading': cart.wait}">Checkout</button>
+        <button [disabled]="cart.cartList.length == 0" (click)="cart.checkout()" class="button is-success is-hidden-mobile" [ngClass]="{'is-loading': cart.wait}">Checkout</button>
       </div>
     </div>    
   </div>

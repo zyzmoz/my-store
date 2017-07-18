@@ -28,6 +28,7 @@
     "core-js": "^2.4.1",
     "fontawesome": "^4.7.2",
     "jquery": "^3.2.1",
+    "pagseguro": "git+https://github.com/zyzmoz/pagseguro.git",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },

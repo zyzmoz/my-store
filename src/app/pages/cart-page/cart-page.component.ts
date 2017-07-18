@@ -7,10 +7,13 @@ import { CartService } from '../../providers/cart.service';
   styleUrls: ['./cart-page.component.sass']
 })
 export class CartPageComponent implements OnInit {
+  
 
   constructor(public cart: CartService) { }
 
   ngOnInit() {
   }
+
+  
 
 }
