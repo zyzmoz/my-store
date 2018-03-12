@@ -23,6 +23,10 @@ export class ProductCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  showDetails(id){
+    
+  }
+
   buyItem(obj){
     let item: CartItem = {
       id: obj.id,
