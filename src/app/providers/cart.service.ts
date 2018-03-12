@@ -3,6 +3,8 @@ import { CartItem } from '../models/cart-item';
 
 @Injectable()
 export class CartService {
+
+  shippingValue : number = 0
   cartList: Array<CartItem> = [{
     id: '1',
     item: 1,
@@ -46,6 +48,7 @@ export class CartService {
     setTimeout(() => {
       this.cartList = [];
       this.wait = false;
+      this.shippingValue = 0;
     },3000);    
 
   }

@@ -14,6 +14,9 @@ export class CartPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  getShipping = () => {
+    this.cart.shippingValue = Math.random() * (50 - 0) + 0;
+  }
   
 
 }

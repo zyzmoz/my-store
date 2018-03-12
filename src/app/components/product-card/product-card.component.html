@@ -24,7 +24,7 @@
         <span class="tag is-warning">{{product.price | number:'1.2-2' | currency:'BRL':true}}</span>
       </div>  
       <footer class="card-footer">
-        <a class="card-footer-item">
+        <a routerLink="/product/{{product.id}}" class="card-footer-item">
           <span class="icon">
             <i class="fa fa-info-circle"></i>
           </span>

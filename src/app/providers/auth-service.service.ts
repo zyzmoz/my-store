@@ -5,6 +5,13 @@ import * as firebase from 'firebase';
 @Injectable()
 export class AuthServiceService {
 
-  constructor() { }
+  constructor(private router : Router) { }
+
+  isAuthenticated = () => {
+    firebase.auth().onAuthStateChanged(authUser => {
+      if (!authUser)
+        this.router.navigate(['']);
+    });
+  }
 
 }

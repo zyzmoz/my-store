@@ -1,8 +1,9 @@
 import { Component, OnInit,  } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product';
+import { CartItem } from '../../models/cart-item';
 import { ProductService } from '../../providers/product.service';
-import * as firebase from 'firebase';
+import { CartService } from '../../providers/cart.service';
 
 
 @Component({
@@ -14,8 +15,12 @@ export class ProductPageComponent implements OnInit {
 
   product: Product;
   private sub: any;
+  msg: boolean = false;
+  quantity: number = 1;
 
-  constructor(private router: Router, private ac : ActivatedRoute, private prodictService : ProductService) {
+
+  constructor(private router: Router, private ac : ActivatedRoute, private prodictService : ProductService,
+              private cartService : CartService) {
     this.sub = this.ac.params.subscribe(params => {
       const key = params['key'];
       console.log('Key', key);      
@@ -30,13 +35,28 @@ export class ProductPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // firebase.auth().onAuthStateChanged(authUser => {
-    //   if (!authUser)
-    //     this.router.navigate(['']);
-    // });
+    
+  }
+
+  addToCart = (obj) => {
+    let item: CartItem = {
+      id: obj.id,
+      item: this.cartService.cartList.length + 1,
+      description: obj.description,
+      url: obj.url,
+      price: obj.price,
+      quantity: this.quantity,
+      picture: obj.picture
+    };
+    this.msg = true;
+    this.cartService.addItem(item);
+    setTimeout(() => {
+      this.msg = false;
+    }, 3000);
   }
 
   ngOnDestroy() {
+    this.product = <Product>{};
     this.sub.unsubscribe();
   }
 

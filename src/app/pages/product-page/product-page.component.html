@@ -1,13 +1,46 @@
-<div class="info columns">
+<div class="notification is-success msg animated fadeIn" [ngClass]="{'fadeOut is-hidden': !msg}">
+  Item added into cart successfully!
+</div>
+<div class="info columns" *ngIf="product">
   <div class="column">
     <picture>
       <img src="{{product.picture}}" alt="prodimg" />
     </picture>
   </div>
-  <div class="column">    
-    <p>{{product.description}}</p>
+  <div class="column">
+    <h2 class="label is-medium">{{product.description}}</h2>
+    <hr/>
     <b>Details</b>
-    <p>{{product.details}}</p> 
-    <button class="button is-success is-halfwidth">Buy</button>   
+    <p>{{product.details}}</p>
+    <h1 class="label is-large">{{product.price}}</h1>
+    <hr/>
+    <label class="label">Shipment</label>
+    <div class="field has-addons">
+      <div class="control">
+        <input class="input" type="text" placeholder="Zip Code">
+      </div>
+      <div class="control">
+        <a class="button is-info">
+          Calculate Shipping
+        </a>
+      </div>
+    </div>
+    <hr/>
+    <div class="buy field is-horizontal">
+      <div class="control">
+        <input type="number" 
+               class="input is-medium" 
+               placeholder="Qty"
+               step="1"
+               min="1"
+               [(ngModel)]="quantity"
+
+                />
+      </div>
+      
+      <button (click)="addToCart(product)" class="button is-success is-halfwidth is-medium">Buy</button>
+      
+
+    </div>    
   </div>
 </div>
